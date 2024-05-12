@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "209540537504",
+    "project_id": "adalato-3c4bc",
+    "storage_bucket": "adalato-3c4bc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:209540537504:android:07549d6c8cca225d78fdc5",
+        "android_client_info": {
+          "package_name": "com.example.exercise_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXGOo-siJZ25PjJKFAUdfiRqYUMZJlm3k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
