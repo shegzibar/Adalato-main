@@ -1,3 +1,4 @@
+import 'package:exercise_app/generated/l10n.dart';
 import 'package:exercise_app/presentation/screens/app_router.dart';
 import 'package:exercise_app/presentation/screens/signup_login/signup_login_design/background_image.dart';
 import 'package:exercise_app/presentation/screens/workouts/workouts_screen.dart';
@@ -31,7 +32,7 @@ class _MyWorkoutsState extends State<MyWorkouts> {
             backgroundColor: Colors.transparent,
             elevation: 0,
             title: Text(
-              "Explore",
+              S.of(context).explore,
               style: TextStyle(
                   fontSize: 25,
                   color: Colors.red,

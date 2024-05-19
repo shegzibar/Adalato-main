@@ -39,6 +39,7 @@ dependencies:
   smooth_page_indicator: ^1.1.0
   provider: ^6.1.2
   youtube_player_flutter: ^9.0.1
+  equatable: ^2.0.5
   flutter_screenutil:
   dio: ^5.4.3+1
   flutter_bloc:  

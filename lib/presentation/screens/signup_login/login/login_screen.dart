@@ -1,3 +1,4 @@
+import 'package:exercise_app/generated/l10n.dart';
 import 'package:exercise_app/presentation/screens/signup_login/loading.dart';
 import 'package:exercise_app/presentation/screens/signup_login/signup/signup_info.dart';
 import 'package:exercise_app/presentation/screens/signup_login/signup/signup_screen.dart';
@@ -43,7 +44,7 @@ class _Login_pageState extends State<Login_page> {
                         height: 100.h,
                       ),
                       Text(
-                        'Login',
+                        S.of(context).login,
                         style: TextStyle(
                           fontSize: 37.sp,
                           color: Colors.white,
@@ -69,7 +70,6 @@ class _Login_pageState extends State<Login_page> {
                                     fontSize: 20.sp,
                                   ),
                                   decoration: InputDecoration(
-
                                     contentPadding: EdgeInsets.symmetric(
                                         vertical: 15.0, horizontal: 15.0),
                                     prefixIcon: Icon(
@@ -77,12 +77,12 @@ class _Login_pageState extends State<Login_page> {
                                       Icons.person_outline_rounded,
                                       color: Colors.white,
                                     ),
-                                    hintText: 'Enter your email',
+                                    hintText: S.of(context).email_hint,
                                     hintStyle: TextStyle(
                                       color: Colors.white,
                                       fontSize: 20.sp,
                                     ),
-                                    labelText: 'Email',
+                                    labelText: S.of(context).email,
                                     labelStyle: TextStyle(
                                       fontSize: 25.sp,
                                       color: Colors.white,
@@ -97,7 +97,7 @@ class _Login_pageState extends State<Login_page> {
                                   },
                                   validator: (value) {
                                     if (value!.isEmpty) {
-                                      return "please type your email";
+                                      return S.of(context).email_warning;
                                     } else
                                       return null;
                                   },
@@ -120,14 +120,14 @@ class _Login_pageState extends State<Login_page> {
                                     contentPadding: EdgeInsets.symmetric(
                                         vertical: 20.0, horizontal: 20.0,
                                     ),
-                                    hintText: 'Enter password',
+                                    hintText: S.of(context).password_hint,
                                     hintStyle: TextStyle(
                                       fontSize: 20.sp,
                                       letterSpacing: 1,
                                       color: Colors.white,
                                     ),
                                     alignLabelWithHint: true,
-                                    labelText: 'Password\n',
+                                    labelText: S.of(context).password,
                                     labelStyle: TextStyle(
                                       fontSize: 25.sp,
                                       color: Colors.white,
@@ -163,7 +163,7 @@ class _Login_pageState extends State<Login_page> {
                                   obscureText: _Pass,
                                   validator: (value) {
                                     if (value!.length < 8) {
-                                      return "your password should be 8 digit long  ";
+                                      return S.of(context).password_warning;
                                     } else
                                       return null;
                                   },
@@ -182,7 +182,7 @@ class _Login_pageState extends State<Login_page> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Forget password?  ',
+                              S.of(context).forget,
                                 style: TextStyle(
                                   color: Colors.white,
                                   fontSize: 18,
@@ -193,8 +193,8 @@ class _Login_pageState extends State<Login_page> {
                                 Navigator.push(context,
                                     MaterialPageRoute(builder: (context) => register()));
                               },
-                              child: const Text(
-                                " Reset password",
+                              child: Text(
+                                S.of(context).reset,
                                 style: TextStyle(
                                     color: Colors.white,
                                     fontWeight: FontWeight.bold,
@@ -229,7 +229,7 @@ class _Login_pageState extends State<Login_page> {
                           height: 0.08.sh,
                           child: ElevatedButton(
                             child: Text(
-                              ' Login ',
+                              S.of(context).login,
                               style: TextStyle(
                                 fontSize: 20.sp,
                                 color: Colors.white,
@@ -278,7 +278,7 @@ class _Login_pageState extends State<Login_page> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
                           Text(
-                            "\t Don't have account?",
+                            S.of(context).no_account,
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 18,
@@ -289,8 +289,8 @@ class _Login_pageState extends State<Login_page> {
                               Navigator.push(context,
                                   MaterialPageRoute(builder: (context) => SignUpPage()));
                             },
-                            child: const Text(
-                              " Create account",
+                            child: Text(
+                              S.of(context).signup,
                               style: TextStyle(
                                   color: Colors.white,
                                   fontWeight: FontWeight.bold,

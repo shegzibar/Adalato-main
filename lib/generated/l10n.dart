@@ -79,6 +79,346 @@ class S {
       args: [],
     );
   }
+
+  /// `ADLATO`
+  String get adlato {
+    return Intl.message(
+      'ADLATO',
+      name: 'adlato',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Login`
+  String get login {
+    return Intl.message(
+      'Login',
+      name: 'login',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Signup`
+  String get signup {
+    return Intl.message(
+      'Signup',
+      name: 'signup',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Gender`
+  String get gender {
+    return Intl.message(
+      'Gender',
+      name: 'gender',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Male`
+  String get male {
+    return Intl.message(
+      'Male',
+      name: 'male',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Female`
+  String get female {
+    return Intl.message(
+      'Female',
+      name: 'female',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Height`
+  String get height {
+    return Intl.message(
+      'Height',
+      name: 'height',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `cm`
+  String get cm {
+    return Intl.message(
+      'cm',
+      name: 'cm',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Weight`
+  String get weight {
+    return Intl.message(
+      'Weight',
+      name: 'weight',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `kg`
+  String get kg {
+    return Intl.message(
+      'kg',
+      name: 'kg',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Fitness Level`
+  String get fitnesslevel {
+    return Intl.message(
+      'Fitness Level',
+      name: 'fitnesslevel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Beginner`
+  String get beginner {
+    return Intl.message(
+      'Beginner',
+      name: 'beginner',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Intermediate`
+  String get intermediate {
+    return Intl.message(
+      'Intermediate',
+      name: 'intermediate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Advanced`
+  String get advanced {
+    return Intl.message(
+      'Advanced',
+      name: 'advanced',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Name`
+  String get name {
+    return Intl.message(
+      'Name',
+      name: 'name',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Email`
+  String get email {
+    return Intl.message(
+      'Email',
+      name: 'email',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password`
+  String get password {
+    return Intl.message(
+      'Password',
+      name: 'password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your name`
+  String get name_hint {
+    return Intl.message(
+      'Enter your name',
+      name: 'name_hint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `please enter your name`
+  String get name_warning {
+    return Intl.message(
+      'please enter your name',
+      name: 'name_warning',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your email`
+  String get email_hint {
+    return Intl.message(
+      'Enter your email',
+      name: 'email_hint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `please enter your email`
+  String get email_warning {
+    return Intl.message(
+      'please enter your email',
+      name: 'email_warning',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter the password`
+  String get password_hint {
+    return Intl.message(
+      'Enter the password',
+      name: 'password_hint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `your password should be 8 digit long `
+  String get password_warning {
+    return Intl.message(
+      'your password should be 8 digit long ',
+      name: 'password_warning',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Confirm Password`
+  String get confirm_password {
+    return Intl.message(
+      'Confirm Password',
+      name: 'confirm_password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Re-enter password`
+  String get reenter_password {
+    return Intl.message(
+      'Re-enter password',
+      name: 'reenter_password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `please re-enter your password correctly`
+  String get confirm_warning {
+    return Intl.message(
+      'please re-enter your password correctly',
+      name: 'confirm_warning',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Already have an account?`
+  String get have_account {
+    return Intl.message(
+      'Already have an account?',
+      name: 'have_account',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// ` Don't have account?`
+  String get no_account {
+    return Intl.message(
+      ' Don\'t have account?',
+      name: 'no_account',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Forget password? `
+  String get forget {
+    return Intl.message(
+      'Forget password? ',
+      name: 'forget',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reset password`
+  String get reset {
+    return Intl.message(
+      'Reset password',
+      name: 'reset',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `My Workouts`
+  String get my_workouts {
+    return Intl.message(
+      'My Workouts',
+      name: 'my_workouts',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `All Workouts`
+  String get all_workouts {
+    return Intl.message(
+      'All Workouts',
+      name: 'all_workouts',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Tips`
+  String get tips {
+    return Intl.message(
+      'Tips',
+      name: 'tips',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sign out`
+  String get signout {
+    return Intl.message(
+      'Sign out',
+      name: 'signout',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

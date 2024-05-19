@@ -1,3 +1,4 @@
+import 'package:exercise_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -21,8 +22,8 @@ class LevelSelection extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        const Text(
-          "Fitness Level",
+        Text(
+          S.of(context).fitnesslevel,
           style: TextStyle(
             decoration: TextDecoration.none,
             fontSize: 40,
@@ -37,13 +38,13 @@ class LevelSelection extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             levelButton(
-              level: 'Beginner',
+              level: S.of(context).beginner,
             ),
             levelButton(
-              level: 'Intermediate',
+              level: S.of(context).intermediate,
             ),
             levelButton(
-              level: 'Advanced',
+              level: S.of(context).advanced,
             ),
           ],
         ),

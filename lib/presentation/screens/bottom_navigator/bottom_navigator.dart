@@ -2,8 +2,9 @@ import 'package:exercise_app/cubit/workouts_cubit.dart';
 import 'package:exercise_app/generated/l10n.dart';
 import 'package:exercise_app/presentation/screens/app_router.dart';
 import 'package:exercise_app/presentation/screens/bottom_navigator/account_screen.dart';
-import 'package:exercise_app/presentation/screens/bottom_navigator/calendar_screen.dart';
+import 'package:exercise_app/presentation/screens/bottom_navigator/explore_screen.dart';
 import 'package:exercise_app/presentation/screens/bottom_navigator/home_screen.dart';
+import 'package:exercise_app/presentation/screens/programs_screen.dart';
 import 'package:exercise_app/presentation/screens/workouts/myworkouts.dart';
 import 'package:exercise_app/web_services/workout_repository.dart';
 import 'package:exercise_app/web_services/workout_webservices.dart';
@@ -19,8 +20,7 @@ class BottomNavigator extends StatefulWidget {
 
 class _BottomNavigatorState extends State<BottomNavigator> {
   List<Widget> widgetList = [
-    MyWorkouts(),
-    //Calendar(appRouter: AppRouter(),),
+    ProgramsPage(),
     Home(),
     Account(),
 

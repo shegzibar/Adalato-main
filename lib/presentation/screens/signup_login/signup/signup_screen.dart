@@ -1,23 +1,33 @@
-import 'package:exercise_app/presentation/screens/signup_login/signup/gender_button.dart';
-import 'package:exercise_app/presentation/screens/signup_login/signup/height_picker.dart';
-import 'package:exercise_app/presentation/screens/signup_login/signup/level_picker.dart';
-import 'package:exercise_app/presentation/screens/signup_login/signup/signup_info.dart';
-import 'package:exercise_app/presentation/screens/signup_login/signup/weight_picker.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:provider/provider.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'gender_button.dart';
+import 'height_picker.dart';
+import 'level_picker.dart';
+import 'signup_info.dart';
+import 'weight_picker.dart';
 import '../signup_login_design/background_image.dart';
-import '../signup_login_design/password_input.dart';
-import '../signup_login_design/text_input.dart';
 
-class SignUpPage extends StatefulWidget {
-  const SignUpPage({super.key});
-
+class SignUpPage extends StatelessWidget {
   @override
-  State<SignUpPage> createState() => _SignUpPageState();
+  Widget build(BuildContext context) {
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => GenderModel()),
+        ChangeNotifierProvider(create: (_) => HeightModel()),
+        ChangeNotifierProvider(create: (_) => FitnessLevelModel()),
+      ],
+      child: SignUpPageContent(),
+    );
+  }
 }
 
-class _SignUpPageState extends State<SignUpPage> {
+class SignUpPageContent extends StatefulWidget {
+  @override
+  _SignUpPageContentState createState() => _SignUpPageContentState();
+}
+
+class _SignUpPageContentState extends State<SignUpPageContent> {
   PageController _controller = PageController();
   int currentPageIndex = 0;
   final int totalPages = 5;
@@ -27,7 +37,6 @@ class _SignUpPageState extends State<SignUpPage> {
     super.initState();
     _controller = PageController();
     _controller.addListener(() {
-      // Update the state with the new page index
       int nextPage = _controller.page!.round();
       if (nextPage != currentPageIndex) {
         setState(() {
@@ -44,72 +53,86 @@ class _SignUpPageState extends State<SignUpPage> {
         const BackgroundImage(),
         PageView(
           controller: _controller,
-          children:  <Widget>[
-
+          children: <Widget>[
             GenderSelection(),
             HeightPicker(),
             WeightPicker(),
             LevelSelection(),
             register(),
-
           ],
         ),
-        Container(
-          alignment: const Alignment(0, 0.75),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(25.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    Visibility(
-                      visible: currentPageIndex > 0, // Show if not the first page
-                      child: GestureDetector(
-                        onTap:() {
-                          _controller.previousPage(
-                            duration: Duration(milliseconds: 300),
-                            curve: Curves.easeIn,
-                          );
+        if (currentPageIndex < totalPages - 1)
+          Container(
+            alignment: const Alignment(0, 0.75),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(25.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Visibility(
+                        visible: currentPageIndex > 0, // Show if not the first page
+                        child: GestureDetector(
+                          onTap: () {
+                            _controller.previousPage(
+                              duration: Duration(milliseconds: 300),
+                              curve: Curves.easeIn,
+                            );
                           },
-                        child: Text(
-                          "Back",
-                          style: TextStyle(
-                            decoration: TextDecoration.none,
+                          child: Icon(
+                            Icons.arrow_back_ios,
                             color: Colors.white,
-                            fontSize: 25,
+                            size: 40,
                           ),
                         ),
                       ),
-                    ),
-                    SmoothPageIndicator(effect: SlideEffect(activeDotColor:Colors.red),controller: _controller, count: 5),
-                    Visibility(
-                      visible: currentPageIndex < totalPages - 1, // Show if not the last page
-                      child: GestureDetector(
-                        onTap:() {
-                          _controller.nextPage(
-                            duration: Duration(milliseconds: 300),
-                            curve: Curves.easeIn,
-                          );
-                        },
-                        child: Text(
-                          "Next",
-                          style: TextStyle(
-                            decoration: TextDecoration.none,
-                            color: Colors.white,
-                            fontSize: 25,
-                          ),
+                      SmoothPageIndicator(
+                        effect: SlideEffect(activeDotColor: Colors.red),
+                        controller: _controller,
+                        count: totalPages,
+                      ),
+                      Visibility(
+                        visible: currentPageIndex < totalPages - 1, // Show if not the last page
+                        child: Consumer3<GenderModel, HeightModel, FitnessLevelModel>(
+                          builder: (context, genderModel, heightModel, fitnessLevelModel, child) {
+                            return GestureDetector(
+                              onTap: () {
+                                if (currentPageIndex == 0 && genderModel.selectedGender == null) {
+                                  ScaffoldMessenger.of(context).showSnackBar(
+                                    SnackBar(content: Text('Please select a gender to proceed.')),
+                                  );
+                                } else if (currentPageIndex == 1 && heightModel.selectedHeight == 0) {
+                                  ScaffoldMessenger.of(context).showSnackBar(
+                                    SnackBar(content: Text('Please select a height to proceed.')),
+                                  );
+                                } else if (currentPageIndex == 3 && fitnessLevelModel.selectedLevel == null) {
+                                  ScaffoldMessenger.of(context).showSnackBar(
+                                    SnackBar(content: Text('Please select a fitness level to proceed.')),
+                                  );
+                                } else {
+                                  _controller.nextPage(
+                                    duration: Duration(milliseconds: 300),
+                                    curve: Curves.easeIn,
+                                  );
+                                }
+                              },
+                              child: Icon(
+                                Icons.arrow_forward_ios,
+                                color: Colors.white,
+                                size: 40,
+                              ),
+                            );
+                          },
                         ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
-        ),
-
       ],
     );
   }

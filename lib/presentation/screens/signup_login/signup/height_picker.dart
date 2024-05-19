@@ -1,3 +1,4 @@
+import 'package:exercise_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -40,8 +41,8 @@ class _HeightPickerState extends State<HeightPicker> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text(
-              "Height",
+            Text(
+              S.of(context).height,
               style: TextStyle(
                 fontSize: 40,
                 fontWeight: FontWeight.w700,
@@ -83,8 +84,8 @@ class _HeightPickerState extends State<HeightPicker> {
                   ),
                 ),
                 const SizedBox(width: 10),
-                const Text(
-                  'cm',
+                Text(
+                  S.of(context).cm,
                   style: TextStyle(
                     fontSize: 23,
                     color: Colors.white,

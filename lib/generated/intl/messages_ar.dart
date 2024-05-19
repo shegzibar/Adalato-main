@@ -22,8 +22,52 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "account": MessageLookupByLibrary.simpleMessage("لصفح"),
-        "explore": MessageLookupByLibrary.simpleMessage("تقويم"),
-        "home": MessageLookupByLibrary.simpleMessage("الصفحه الرايسيه")
+        "account": MessageLookupByLibrary.simpleMessage("الحساب"),
+        "adlato": MessageLookupByLibrary.simpleMessage("عضلاتو"),
+        "advanced": MessageLookupByLibrary.simpleMessage("متقدم"),
+        "all_workouts": MessageLookupByLibrary.simpleMessage("جميع التدريبات"),
+        "beginner": MessageLookupByLibrary.simpleMessage("مبتدئ"),
+        "cm": MessageLookupByLibrary.simpleMessage("سم"),
+        "confirm_password":
+            MessageLookupByLibrary.simpleMessage("تأكيد كلمة المرور"),
+        "confirm_warning": MessageLookupByLibrary.simpleMessage(
+            "يرجى إعادة إدخال كلمة المرور الخاصة بك بشكل صحيح"),
+        "email": MessageLookupByLibrary.simpleMessage("البريد إلكتروني"),
+        "email_hint":
+            MessageLookupByLibrary.simpleMessage("أدخل بريدك الإلكتروني"),
+        "email_warning":
+            MessageLookupByLibrary.simpleMessage("رجاءا أدخل بريدك الإلكتروني"),
+        "explore": MessageLookupByLibrary.simpleMessage("استكشف"),
+        "female": MessageLookupByLibrary.simpleMessage("أنثى"),
+        "fitnesslevel":
+            MessageLookupByLibrary.simpleMessage("مستوى اللياقة البدنية"),
+        "forget": MessageLookupByLibrary.simpleMessage("هل نسيت كلمة المرور؟ "),
+        "gender": MessageLookupByLibrary.simpleMessage("جنس"),
+        "have_account": MessageLookupByLibrary.simpleMessage("هل لديك حساب؟"),
+        "height": MessageLookupByLibrary.simpleMessage("الطول"),
+        "home": MessageLookupByLibrary.simpleMessage("الصفحه الرايسيه"),
+        "intermediate": MessageLookupByLibrary.simpleMessage("متوسط"),
+        "kg": MessageLookupByLibrary.simpleMessage("كلغ"),
+        "login": MessageLookupByLibrary.simpleMessage("تسجيل دخول"),
+        "male": MessageLookupByLibrary.simpleMessage("ذكر"),
+        "my_workouts": MessageLookupByLibrary.simpleMessage("تدريباتي"),
+        "name": MessageLookupByLibrary.simpleMessage("الاسم"),
+        "name_hint": MessageLookupByLibrary.simpleMessage("أدخل أسمك"),
+        "name_warning":
+            MessageLookupByLibrary.simpleMessage("من فضلك أدخل إسمك"),
+        "no_account": MessageLookupByLibrary.simpleMessage("ليس لديك حساب؟ "),
+        "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
+        "password_hint":
+            MessageLookupByLibrary.simpleMessage("أدخل كلمة المرور"),
+        "password_warning": MessageLookupByLibrary.simpleMessage(
+            "يجب أن تتكون كلمة المرور الخاصة بك من 8 أرقام"),
+        "reenter_password":
+            MessageLookupByLibrary.simpleMessage("إعادة إدخال كلمة المرور"),
+        "reset":
+            MessageLookupByLibrary.simpleMessage("إعادة تعيين كلمة المرور "),
+        "signout": MessageLookupByLibrary.simpleMessage("تسجيل خروج"),
+        "signup": MessageLookupByLibrary.simpleMessage("انشاء حساب"),
+        "tips": MessageLookupByLibrary.simpleMessage("نصائح"),
+        "weight": MessageLookupByLibrary.simpleMessage("الوزن")
       };
 }

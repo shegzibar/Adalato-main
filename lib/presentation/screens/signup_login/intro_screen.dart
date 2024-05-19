@@ -1,3 +1,4 @@
+import 'package:exercise_app/generated/l10n.dart';
 import 'package:exercise_app/presentation/screens/signup_login/login/login_screen.dart';
 import 'package:exercise_app/presentation/screens/signup_login/signup/signup_screen.dart';
 import 'package:flutter/material.dart';
@@ -80,12 +81,24 @@ class _IntroPageState extends State<IntroPage> {
         Container(
           alignment: Alignment(0, 0.75),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.end,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  S.of(context).adlato,
+                  style: TextStyle(
+                    fontSize: 35,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    decoration: TextDecoration.none,
+                  ),
+                ),
+              ),
+              /*Padding(
                 padding: const EdgeInsets.all(28.0),
                 child: SmoothPageIndicator(effect: SlideEffect(activeDotColor: Colors.red) ,controller: _controller, count: 3),
-              ),
+              ),*/
               Padding(
                 padding: const EdgeInsets.all(10.0),
                 child: Row(
@@ -93,7 +106,7 @@ class _IntroPageState extends State<IntroPage> {
                   children: [
                     Container(
                       height: 60,
-                      width: 120,
+                      width: 140,
                       margin: EdgeInsets.zero,
                       child: ElevatedButton(
                           onPressed: () {
@@ -101,7 +114,7 @@ class _IntroPageState extends State<IntroPage> {
                               context,MaterialPageRoute(builder: (context) => SignUpPage()),);
                           },
                           child: Text(
-                              "Signup",
+                              S.of(context).signup,
                               style: TextStyle(
                                 fontSize: 20,
                                 fontWeight: FontWeight.w300,
@@ -119,7 +132,7 @@ class _IntroPageState extends State<IntroPage> {
                     ),
                     Container(
                       height: 60,
-                      width: 120,
+                      width: 140,
                       margin: EdgeInsets.zero,
                       child: ElevatedButton(
                         onPressed: () {
@@ -127,7 +140,7 @@ class _IntroPageState extends State<IntroPage> {
                             context,MaterialPageRoute(builder: (context) => Login_page()),);
                         },
                         child: Text(
-                          "Login",
+                          S.of(context).login,
                           style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.w300,
@@ -154,17 +167,3 @@ class _IntroPageState extends State<IntroPage> {
     );
   }
 }
-
-
-//Scaffold(
-//backgroundColor: Colors.transparent,
-//body: SingleChildScrollView(
-//child: SafeArea(
-//child: Column(
-//children: [
-//Text("data")
-//],
-//),
-//),
-//),
-//),

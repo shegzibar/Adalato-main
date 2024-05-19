@@ -21,11 +21,11 @@ WidgetsFlutterBinding.ensureInitialized();
 await Firebase.initializeApp(
   options: const FirebaseOptions(
     apiKey:
-    "AIzaSyCXGOo-siJZ25PjJKFAUdfiRqYUMZJlm3k", // paste your api key here
+    "AIzaSyCXGOo-siJZ25PjJKFAUdfiRqYUMZJlm3k", // your api key here
     appId:
-    "1:209540537504:android:07549d6c8cca225d78fdc5", //paste your app id here
-    messagingSenderId: "209540537504", //paste your messagingSenderId here
-    projectId: "adalato-3c4bc", //paste your project id here
+    "1:209540537504:android:07549d6c8cca225d78fdc5", // your app id here
+    messagingSenderId: "209540537504", // your messagingSenderId here
+    projectId: "adalato-3c4bc", // your project id here
   ),
 );
   runApp(
@@ -50,9 +50,8 @@ class MyApp extends StatelessWidget {
     return StreamProvider<User?>.value(
       value: Authservice().user,
       initialData:  null,
-      // builder: (context, snapshot) {
        child :MaterialApp(
-              locale: Locale("en"),
+              //locale: Locale("ar"),
               localizationsDelegates: [
                 S.delegate,
                 GlobalMaterialLocalizations.delegate,

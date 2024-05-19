@@ -1,3 +1,4 @@
+import 'package:exercise_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -39,8 +40,8 @@ class _WeightPickerState extends State<WeightPicker> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text(
-              "Weight",
+            Text(
+              S.of(context).weight,
               style: TextStyle(
                 fontSize: 40,
                 fontWeight: FontWeight.w700,
@@ -81,8 +82,8 @@ class _WeightPickerState extends State<WeightPicker> {
                   ),
                 ),
                 const SizedBox(width: 10),
-                const Text(
-                  'kg',
+                Text(
+                  S.of(context).kg,
                   style: TextStyle(
                     fontSize: 23,
                     color: Colors.white,

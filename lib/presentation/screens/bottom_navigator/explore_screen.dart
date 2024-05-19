@@ -5,9 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
 
 
-class Calendar extends StatelessWidget {
+class Explore extends StatelessWidget {
   final AppRouter appRouter;
-  Calendar({super.key, required this.appRouter});
+  Explore({super.key, required this.appRouter});
 
   List<Map<String, dynamic>> _journals = [];
 

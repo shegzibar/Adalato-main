@@ -1,3 +1,4 @@
+import 'package:exercise_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
@@ -22,8 +23,8 @@ class GenderSelection extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        const Text(
-          "Gender",
+        Text(
+          S.of(context).gender,
           style: TextStyle(
             decoration: TextDecoration.none,
             fontSize: 40,
@@ -40,7 +41,7 @@ class GenderSelection extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 genderButton(
-                  gender: 'Male',
+                  gender: S.of(context).male,
                   icon: Icons.male,
                   selected: genderModel.selectedGender == 'Male',
                   onPressed: () {
@@ -48,7 +49,7 @@ class GenderSelection extends StatelessWidget {
                   },
                 ),
                 genderButton(
-                  gender: 'Female',
+                  gender: S.of(context).female,
                   icon: Icons.female,
                   selected: genderModel.selectedGender == 'Female',
                   onPressed: () {

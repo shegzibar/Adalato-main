@@ -1,4 +1,6 @@
 import 'package:exercise_app/cubit/workouts_cubit.dart';
+import 'package:exercise_app/presentation/screens/Excercises_view.dart';
+import 'package:exercise_app/presentation/screens/programlist_view.dart';
 import 'package:exercise_app/presentation/screens/signup_login/signup_login_design/background_image.dart';
 import 'package:exercise_app/presentation/screens/workouts/myworkouts.dart';
 import 'package:exercise_app/presentation/screens/workouts/tips.dart';
@@ -105,7 +107,7 @@ class _HomeState extends State<Home> {
                                 color: Colors.red, // Color of the icon
                               ),
                               Text(
-                                "My Workouts",
+                                S.of(context).my_workouts,
                                 style: TextStyle(
                                   fontSize: 20,
                                   fontWeight: FontWeight.bold,
@@ -121,11 +123,8 @@ class _HomeState extends State<Home> {
                     GestureDetector(
                       onTap: () {
                         Navigator.push(context,  MaterialPageRoute(
-                          builder: (_) =>
-                              BlocProvider(
-                                create: (BuildContext context) => WorkoutsCubit(workoutsRepository),
-                                child: WorkoutsScreen(value: "",),
-                              ),
+                          builder: (_) => Programs(),
+
                         ),);
                       },
                       child: Container(
@@ -149,7 +148,7 @@ class _HomeState extends State<Home> {
                                 color: Colors.red, // Color of the icon
                               ),
                               Text(
-                                "All Workouts",
+                                "Programs",
                                 style: TextStyle(
                                   fontSize: 20,
                                   fontWeight: FontWeight.bold,
@@ -170,8 +169,10 @@ class _HomeState extends State<Home> {
                   children: [
                     GestureDetector(
                       onTap: () {
-                        // Handle onTap for "My Workouts" container
-                      },
+                        Navigator.push(context, MaterialPageRoute(
+                        builder: (_) => ExercisePage(),
+                        ),);
+                        },
                       child: Container(
                         height: 160,
                         width: 160,
@@ -188,12 +189,12 @@ class _HomeState extends State<Home> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Icon(
-                                Icons.fitness_center, // You can use any icon you prefer
+                                Icons.e_mobiledata_outlined, // You can use any icon you prefer
                                 size: 48,
                                 color: Colors.red, // Color of the icon
                               ),
                               Text(
-                                "My Workouts",
+                                "Exercise",
                                 style: TextStyle(
                                   fontSize: 20,
                                   fontWeight: FontWeight.bold,
@@ -208,10 +209,10 @@ class _HomeState extends State<Home> {
                     ),
           GestureDetector(
             onTap: () {
-              Navigator.push(
+              Navigator.push (
                 context,
-                MaterialPageRoute(
-                  builder: (context) => WorkoutTipsPage(),
+                MaterialPageRoute (
+                  builder: (BuildContext context) => WorkoutTipsPage(),
                 ),
               );
             },
@@ -236,7 +237,7 @@ class _HomeState extends State<Home> {
                       color: Colors.red, // Color of the icon
                     ),
                     Text(
-                      "Tips",
+                      S.of(context).tips,
                       style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
