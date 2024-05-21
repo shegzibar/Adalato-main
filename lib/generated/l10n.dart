@@ -419,6 +419,36 @@ class S {
       args: [],
     );
   }
+
+  /// `Choose Language`
+  String get chooseLanguage {
+    return Intl.message(
+      'Choose Language',
+      name: 'chooseLanguage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Exercises`
+  String get exercises {
+    return Intl.message(
+      'Exercises',
+      name: 'exercises',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Programs`
+  String get programs {
+    return Intl.message(
+      'Programs',
+      name: 'programs',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

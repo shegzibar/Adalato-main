@@ -9,9 +9,11 @@ class Buttonlog extends StatelessWidget {
   const Buttonlog({
     Key? key,
     required this.buttonText,
+    required this.userId,
   }) : super(key: key);
 
   final String buttonText;
+  final String userId;
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +26,7 @@ class Buttonlog extends StatelessWidget {
       child: TextButton(
         onPressed: () {  Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => BottomNavigator()));},
+            MaterialPageRoute(builder: (context) => BottomNavigator(userId: userId)),);},
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 12.0),
           child: Text(

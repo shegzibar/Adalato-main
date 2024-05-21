@@ -1,30 +1,30 @@
-import 'package:exercise_app/cubit/workouts_cubit.dart';
 import 'package:exercise_app/generated/l10n.dart';
-import 'package:exercise_app/presentation/screens/app_router.dart';
 import 'package:exercise_app/presentation/screens/bottom_navigator/account_screen.dart';
-import 'package:exercise_app/presentation/screens/bottom_navigator/explore_screen.dart';
 import 'package:exercise_app/presentation/screens/bottom_navigator/home_screen.dart';
 import 'package:exercise_app/presentation/screens/programs_screen.dart';
-import 'package:exercise_app/presentation/screens/workouts/myworkouts.dart';
-import 'package:exercise_app/web_services/workout_repository.dart';
-import 'package:exercise_app/web_services/workout_webservices.dart';
 import 'package:flutter/material.dart';
 
 class BottomNavigator extends StatefulWidget {
-  const BottomNavigator({super.key});
+  final String userId; // Add userId as a required parameter
 
+  const BottomNavigator({super.key, required this.userId});
 
   @override
   State<BottomNavigator> createState() => _BottomNavigatorState();
 }
 
 class _BottomNavigatorState extends State<BottomNavigator> {
-  List<Widget> widgetList = [
-    ProgramsPage(),
-    Home(),
-    Account(),
+  late List<Widget> widgetList;
 
-  ];
+  @override
+  void initState() {
+    super.initState();
+    widgetList = [
+      ProgramsPage(userId: widget.userId),
+      Home(userId: widget.userId),
+      Account(),
+    ];
+  }
   int myhome = 0;
   @override
   Widget build(BuildContext context) {

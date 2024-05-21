@@ -1,9 +1,11 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:exercise_app/generated/l10n.dart';
+import 'package:exercise_app/main.dart';
 import 'package:exercise_app/presentation/screens/signup_login/signup_login_design/background_image.dart';
 import 'package:exercise_app/presentation/services/auth.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class Account extends StatefulWidget {
   const Account({super.key});
@@ -53,6 +55,59 @@ class _AccountState extends State<Account> {
 
   final Authservice _auth = Authservice();
 
+  void _showLanguageDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          backgroundColor: Colors.grey[600]?.withOpacity(0.6),
+          title: Text(
+              S.of(context).chooseLanguage,
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              ListTile(
+                tileColor: Colors.transparent,
+                title: Text(
+                    'English',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 18,
+                  ),
+                ),
+                onTap: () {
+                  Provider.of<LocaleProvider>(context, listen: false).setLocale(Locale('en'));
+                  Navigator.of(context).pop();
+                },
+              ),
+              ListTile(
+                tileColor: Colors.transparent,
+                title: Text(
+                    'العربية',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                onTap: () {
+                  Provider.of<LocaleProvider>(context, listen: false).setLocale(Locale('ar'));
+                  Navigator.of(context).pop();
+                },
+              ),
+            ],
+          ),
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -73,13 +128,18 @@ class _AccountState extends State<Account> {
               ),
             ),
             centerTitle: true,
+            actions: [
+              IconButton(
+                icon: Icon(Icons.language, color: Colors.red),
+                onPressed: () => _showLanguageDialog(context),
+              ),
+            ],
           ),
           body: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
                     username ?? 'Username not available',

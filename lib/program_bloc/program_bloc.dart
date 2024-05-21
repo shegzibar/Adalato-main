@@ -16,7 +16,7 @@ class ProgramBloc extends Bloc<ProgramEvent, ProgramState> {
   Future<void> _onLoadPrograms(ProgramEvent event, Emitter<ProgramState> emit) async {
     emit(ProgramsLoadInProgress());
     try {
-      QuerySnapshot snapshot = await firestore.collection('programs').get();
+      QuerySnapshot snapshot = await firestore.collection('program').get();
       List<Program> allPrograms = snapshot.docs.map((doc) => Program.fromSnapshot(doc)).toList();
       emit(ProgramsLoadSuccess(
         calisthenicsPrograms: allPrograms.where((p) => p.type == "Calisthenics").toList(),

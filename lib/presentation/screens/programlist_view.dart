@@ -10,6 +10,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Programs extends StatelessWidget {
+  final String userId; // Add userId as a required parameter
+
+  const Programs({required this.userId});
+
   @override
   Widget build(BuildContext context) {
 
@@ -64,7 +68,7 @@ class Programs extends StatelessWidget {
                 builder: (BuildContext context) => BlocProvider(
                   create: (context) => WorkoutBloc(firestore: FirebaseFirestore.instance)
                     ..add(FetchWorkoutsByProgramId(programId: program.id.toString())),
-                  child: WorkoutsPage(programId: program.id),
+                  child: WorkoutsPage(programId: program.id, userId: userId),
                 ),
               ),
             );

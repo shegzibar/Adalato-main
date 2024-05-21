@@ -27,6 +27,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "advanced": MessageLookupByLibrary.simpleMessage("Advanced"),
         "all_workouts": MessageLookupByLibrary.simpleMessage("All Workouts"),
         "beginner": MessageLookupByLibrary.simpleMessage("Beginner"),
+        "chooseLanguage":
+            MessageLookupByLibrary.simpleMessage("Choose Language"),
         "cm": MessageLookupByLibrary.simpleMessage("cm"),
         "confirm_password":
             MessageLookupByLibrary.simpleMessage("Confirm Password"),
@@ -36,6 +38,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "email_hint": MessageLookupByLibrary.simpleMessage("Enter your email"),
         "email_warning":
             MessageLookupByLibrary.simpleMessage("please enter your email"),
+        "exercises": MessageLookupByLibrary.simpleMessage("Exercises"),
         "explore": MessageLookupByLibrary.simpleMessage("Explore"),
         "female": MessageLookupByLibrary.simpleMessage("Female"),
         "fitnesslevel": MessageLookupByLibrary.simpleMessage("Fitness Level"),
@@ -61,6 +64,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Enter the password"),
         "password_warning": MessageLookupByLibrary.simpleMessage(
             "your password should be 8 digit long "),
+        "programs": MessageLookupByLibrary.simpleMessage("Programs"),
         "reenter_password":
             MessageLookupByLibrary.simpleMessage("Re-enter password"),
         "reset": MessageLookupByLibrary.simpleMessage("Reset password"),

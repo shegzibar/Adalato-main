@@ -27,6 +27,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "advanced": MessageLookupByLibrary.simpleMessage("متقدم"),
         "all_workouts": MessageLookupByLibrary.simpleMessage("جميع التدريبات"),
         "beginner": MessageLookupByLibrary.simpleMessage("مبتدئ"),
+        "chooseLanguage": MessageLookupByLibrary.simpleMessage("اختر اللغة"),
         "cm": MessageLookupByLibrary.simpleMessage("سم"),
         "confirm_password":
             MessageLookupByLibrary.simpleMessage("تأكيد كلمة المرور"),
@@ -37,6 +38,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("أدخل بريدك الإلكتروني"),
         "email_warning":
             MessageLookupByLibrary.simpleMessage("رجاءا أدخل بريدك الإلكتروني"),
+        "exercises": MessageLookupByLibrary.simpleMessage("تمارين"),
         "explore": MessageLookupByLibrary.simpleMessage("استكشف"),
         "female": MessageLookupByLibrary.simpleMessage("أنثى"),
         "fitnesslevel":
@@ -61,6 +63,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("أدخل كلمة المرور"),
         "password_warning": MessageLookupByLibrary.simpleMessage(
             "يجب أن تتكون كلمة المرور الخاصة بك من 8 أرقام"),
+        "programs": MessageLookupByLibrary.simpleMessage("البرامج"),
         "reenter_password":
             MessageLookupByLibrary.simpleMessage("إعادة إدخال كلمة المرور"),
         "reset":

@@ -10,8 +10,10 @@ import 'package:exercise_app/workout_bloc/workout_state.dart';
 
 class WorkoutsPage extends StatelessWidget {
   final String programId;
+  final String userId;
 
-  const WorkoutsPage({required this.programId});
+
+  const WorkoutsPage({required this.programId, required this.userId});
 
   @override
   Widget build(BuildContext context) {
@@ -53,7 +55,10 @@ class WorkoutsPage extends StatelessWidget {
                     itemCount: state.workouts.length,
                     itemBuilder: (context, index) {
                       final workout = state.workouts[index];
-                      return WorkoutTile(workout: workout);
+                      return WorkoutTile(
+                        workout: workout,
+                        userId: userId,
+                      );
                     },
                   );
                 } else {
@@ -70,8 +75,9 @@ class WorkoutsPage extends StatelessWidget {
 
 class WorkoutTile extends StatelessWidget {
   final Workout workout;
+  final String userId;
 
-  const WorkoutTile({required this.workout});
+  const WorkoutTile({required this.workout, required this.userId});
 
   @override
   Widget build(BuildContext context) {
@@ -105,9 +111,20 @@ class WorkoutTile extends StatelessWidget {
             fontWeight: FontWeight.bold,
           ),
         ),
-        trailing: Icon(
-            Icons.arrow_forward_ios,
-          color: Colors.white,
+        trailing: IconButton(
+          icon: Icon(
+            workout.isFavorite ? Icons.favorite : Icons.favorite_border,
+            color: Colors.white,
+          ),
+          onPressed: () {
+            BlocProvider.of<WorkoutBloc>(context).add(
+                ToggleFavoriteStatus(
+                  userId: userId,
+                  workoutId: workout.id,
+                  isFavorite: !workout.isFavorite,
+                ),
+            );
+          },
         ),
       ),
     );

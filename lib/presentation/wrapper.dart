@@ -1,12 +1,8 @@
-import 'package:exercise_app/presentation/screens/bottom_navigator/bottom_navigator.dart';
-import 'package:exercise_app/presentation/screens/bottom_navigator/home_screen.dart';
-import 'package:exercise_app/presentation/screens/signup_login/intro_screen.dart';
-import 'package:exercise_app/presentation/screens/signup_login/signup/signup_info.dart';
-import 'package:exercise_app/presentation/screens/signup_login/signup/signup_screen.dart';
-import 'package:exercise_app/presentation/services/auth.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:exercise_app/presentation/screens/signup_login/intro_screen.dart';
+import 'package:exercise_app/presentation/screens/bottom_navigator/bottom_navigator.dart';
 
 class Wrapper extends StatelessWidget {
   const Wrapper({super.key});
@@ -14,12 +10,17 @@ class Wrapper extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final user = Provider.of<User?>(context);
-
     if (user == null) {
+      // If there is no user, return to intro/login page
       return IntroPage();
     } else {
-      print(user);
-      return BottomNavigator();
+      // Make sure user ID is never null here
+      if (user.uid == null) {
+        // Ideally, this case should never happen if `user` is not null
+        return const Text("User ID is unavailable.");
+      }
+      // Proceed to BottomNavigator with a guaranteed non-null userId
+      return BottomNavigator(userId: user.uid);
     }
   }
 }

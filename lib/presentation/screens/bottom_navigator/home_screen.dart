@@ -1,17 +1,17 @@
-import 'package:exercise_app/cubit/workouts_cubit.dart';
 import 'package:exercise_app/presentation/screens/Excercises_view.dart';
+import 'package:exercise_app/presentation/screens/favorite_workout_page.dart';
 import 'package:exercise_app/presentation/screens/programlist_view.dart';
 import 'package:exercise_app/presentation/screens/signup_login/signup_login_design/background_image.dart';
-import 'package:exercise_app/presentation/screens/workouts/myworkouts.dart';
 import 'package:exercise_app/presentation/screens/workouts/tips.dart';
-import 'package:exercise_app/presentation/screens/workouts/workouts_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:exercise_app/generated/l10n.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:table_calendar/table_calendar.dart';
 
 class Home extends StatefulWidget {
-  const Home({super.key});
+  final String userId; // Add userId as a required parameter
+
+  const Home({super.key, required this.userId});
+
 
   @override
   State<Home> createState() => _HomeState();
@@ -84,6 +84,10 @@ class _HomeState extends State<Home> {
                   children: [
                     GestureDetector(
                       onTap: () {
+                        Navigator.push(context,  MaterialPageRoute(
+                            builder: (_) => FavoriteWorkoutsPage(userId: widget.userId,),
+                        ),
+                        );
                         // Handle onTap for "My Workouts" container
                       },
                       child: Container(
@@ -122,10 +126,12 @@ class _HomeState extends State<Home> {
                     ),
                     GestureDetector(
                       onTap: () {
-                        Navigator.push(context,  MaterialPageRoute(
-                          builder: (_) => Programs(),
-
-                        ),);
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (_) => Programs(userId: widget.userId), // Pass userId here
+                          ),
+                        );
                       },
                       child: Container(
                         height: 160,
@@ -148,7 +154,7 @@ class _HomeState extends State<Home> {
                                 color: Colors.red, // Color of the icon
                               ),
                               Text(
-                                "Programs",
+                                S.of(context).programs,
                                 style: TextStyle(
                                   fontSize: 20,
                                   fontWeight: FontWeight.bold,
@@ -194,7 +200,7 @@ class _HomeState extends State<Home> {
                                 color: Colors.red, // Color of the icon
                               ),
                               Text(
-                                "Exercise",
+                                S.of(context).exercises,
                                 style: TextStyle(
                                   fontSize: 20,
                                   fontWeight: FontWeight.bold,

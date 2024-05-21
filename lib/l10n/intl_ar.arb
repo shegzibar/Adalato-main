@@ -35,5 +35,8 @@
     "my_workouts" : "تدريباتي",
     "all_workouts" : "جميع التدريبات",
     "tips" : "نصائح",
-    "signout" : "تسجيل خروج"
+    "signout" : "تسجيل خروج",
+    "chooseLanguage" : "اختر اللغة",
+    "exercises" : "تمارين",
+    "programs" : "البرامج"
 }

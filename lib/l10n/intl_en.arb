@@ -35,5 +35,8 @@
   "my_workouts" : "My Workouts",
   "all_workouts" : "All Workouts",
   "tips" : "Tips",
-  "signout" : "Sign out"
+  "signout" : "Sign out",
+  "chooseLanguage" : "Choose Language",
+  "exercises" : "Exercises",
+  "programs" : "Programs"
 }

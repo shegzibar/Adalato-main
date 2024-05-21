@@ -10,7 +10,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ProgramsPage extends StatelessWidget {
+  final String userId; // Add userId as a required parameter
 
+  const ProgramsPage({required this.userId});
 
   // Method to get a random image based on program type
   String getImageForProgramType(String programType) {
@@ -18,7 +20,7 @@ class ProgramsPage extends StatelessWidget {
       case 'Calisthenics':
         return "assets/images/back.jpg";
       case 'Weighted':
-        return "assets/images/back.jpg";
+        return "assets/images/weighted.jpg";
       case 'Weighted Calisthenics':
         return "assets/images/upperbody.jpg";
       default:
@@ -94,7 +96,7 @@ class ProgramsPage extends StatelessWidget {
                       builder: (BuildContext context) => BlocProvider(
                         create: (context) => WorkoutBloc(firestore: FirebaseFirestore.instance)
                           ..add(FetchWorkoutsByProgramId(programId: program.id.toString())),
-                        child: WorkoutsPage(programId: program.id),
+                        child: WorkoutsPage(programId: program.id, userId: userId),
                       ),
                     ),
                   );
