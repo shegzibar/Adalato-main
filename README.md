@@ -25,3 +25,4 @@ feat: Implement admin workout/exercise/program management, user analytics, and e
 - Users can browse and view all exercises.
 - Users can favorite exercises.
 By following these guidelines, you'll create a well-structured and informative commit message that effectively communicates the changes made to your Adalato fitness application.
+test
